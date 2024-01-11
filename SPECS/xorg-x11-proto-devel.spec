@@ -5,13 +5,13 @@
 
 Summary: X.Org X11 Protocol headers
 Name: xorg-x11-proto-devel
-Version: 2021.4
-Release: 2%{?dist}
+Version: 2022.2
+Release: 1%{?dist}
 License: MIT
 URL: https://www.x.org
 BuildArch: noarch
 
-Source0:  https://www.x.org/pub/individual/proto/xorgproto-%{version}.tar.bz2
+Source0:  https://www.x.org/pub/individual/proto/xorgproto-%{version}.tar.xz
 
 Source40: make-git-snapshot.sh
 
@@ -171,6 +171,7 @@ rm -f $RPM_BUILD_ROOT%{_docdir}/*/*.{html,svg}
 %{_includedir}/X11/extensions/xtestext1const.h
 %{_includedir}/X11/extensions/xtestext1proto.h
 %{_includedir}/X11/extensions/xtestproto.h
+%{_includedir}/X11/extensions/xwaylandproto.h
 %dir %{_includedir}/X11/fonts
 %{_includedir}/X11/fonts/FS.h
 %{_includedir}/X11/fonts/FSproto.h
@@ -207,9 +208,13 @@ rm -f $RPM_BUILD_ROOT%{_docdir}/*/*.{html,svg}
 %{_datadir}/pkgconfig/xf86vidmodeproto.pc
 %{_datadir}/pkgconfig/xineramaproto.pc
 %{_datadir}/pkgconfig/xproto.pc
+%{_datadir}/pkgconfig/xwaylandproto.pc
 %{_docdir}/xorgproto/*
 
 %changelog
+* Tue Mar 21 2023 Olivier Fourdan <ofourdan@redhat.com> - 2022.2-1
+  xorgproto 2022.2 (#2179319)
+
 * Tue Aug 10 2021 Mohan Boddu <mboddu@redhat.com> - 2021.4-2
 - Rebuilt for IMA sigs, glibc 2.34, aarch64 flags
   Related: rhbz#1991688
